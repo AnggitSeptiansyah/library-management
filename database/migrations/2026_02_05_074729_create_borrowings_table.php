@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('due_date');
             $table->date('return_date')->nullable();
             $table->enum('status', ['borrowed', 'returned', 'overdue'])->default('borrowed');
-            $table->integer('total_fine');
+            $table->integer('total_fine')->default(0);
             $table->text('notes')->nullable();
             $table->timestamps();
         });
