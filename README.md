@@ -123,7 +123,7 @@
 
 ##  Tech Stack
 
-- **Backend**: Laravel 11.x
+- **Backend**: Laravel 12.x
 - **Frontend**: Blade Templates + TailwindCSS
 - **Database**: MySQL/MariaDB
 - **Authentication**: Laravel Breeze
