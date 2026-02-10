@@ -127,7 +127,6 @@
 - **Frontend**: Blade Templates + TailwindCSS
 - **Database**: MySQL/MariaDB
 - **Authentication**: Laravel Breeze
-- **Charts**: Chart.js
 - **PHP**: 8.2+
 - **Package Manager**: Composer, NPM
 
