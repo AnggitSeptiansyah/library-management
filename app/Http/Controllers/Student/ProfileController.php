@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $validated = $request->validated();
 
         // Check apakah password sekarang benar
-        if(!Hash::check($validated['password'], $student->password)) {
+        if(!Hash::check($validated['current_password'], $student->password)) {
             return back()->withErrors(['current_password' => 'Current password is not correct']);
         }
 
