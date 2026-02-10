@@ -101,22 +101,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Class History -->
-            @if($student->classHistories->count() > 0)
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="font-bold text-gray-800 mb-4">Class History</h3>
-                <div class="space-y-2">
-                    @foreach($student->classHistories as $history)
-                    <div class="text-sm">
-                        <span class="text-gray-600">Grade {{ $history->grade_level }}:</span>
-                        <span class="font-semibold text-gray-800 ml-2">{{ $history->class_name }}</span>
-                        <span class="text-xs text-gray-500 ml-1">({{ $history->academic_year }})</span>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-            @endif
         </div>
     </div>
 </div>

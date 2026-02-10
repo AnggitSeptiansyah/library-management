@@ -1,59 +1,196 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Medical Record Information System (MRIS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## About Laravel
+## 📋 Deskripsi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Medical Record Information System (MRIS)** adalah Sistem manajemen perpustakaan sekolah dengan Laravel, TailwindCSS, dan AlpineJS.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### ✨ Fitur Utama
 
-## Learning Laravel
+- 🏥 **Authentication System**
+  - Multi-guard authentication untuk Employee dan Student
+  -  Terpisah login untuk admin/superadmin dan siswa
+  -  Session-based authentication
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **Employee Features (Admin & Superadmin)**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  - Dashboard dengan statistik perpustakaan
+  - Manajemen Buku (CRUD)
+  - Manajemen Kategori (CRUD)
+  - Manajemen Siswa (CRUD + update status)
+  - Manajemen Peminjaman (Create, View, Return)
+  - Superadmin: Manajemen Employee (hanya superadmin yang bisa menambah admin)
+  - Update profil dan data pribadi
 
-## Laravel Sponsors
+- **Student Features**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  - Dashboard dengan ringkasan peminjaman
+  - Catalog buku dengan pencarian dan filter
+  - Lihat buku yang sedang dipinjam
+  - History peminjaman
+  - Update profil dan password
+  - Lihat history kelas
 
-### Premium Partners
+- **Book Management**
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+  - ISBN, judul, penulis, penerbit
+  - Kategori buku
+  - Stock management (total copies & available copies)
+  - Cover image upload
+  - Edisi, tahun terbit, jumlah halaman
+  - Deskripsi buku
 
-## Contributing
+- **Borrowing System**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  - Siswa dapat meminjam multiple books dalam 1 transaksi
+  - Tidak bisa meminjam buku yang sama
+  - Otomatis cek ketersediaan stock
+  - Due date: 7 hari dari tanggal pinjam
+  - Auto-generate borrowing code
+  - Track status: borrowed, overdue, returned
 
-## Code of Conduct
+- **Fine System**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  - Denda otomatis Rp. 500/hari keterlambatan
+  - Maximum denda: Rp. 50.000
+  - Auto-update denda setiap hari jam 00:00 WIB
+  - Console command untuk update denda
 
-## Security Vulnerabilities
+- **Student Class History**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  - Track history kelas siswa (10, 11, 12)
+  - Nullable untuk kelas yang belum dijalani
+  - Academic year tracking
 
-## License
+##  🛠️ Tech Stack
+  - Backend: Laravel 11.x
+  - Frontend: TailwindCSS 3.x
+  - JavaScript: AlpineJS 3.x
+  - Database: MySQL
+  - Authentication: Laravel Multi-Guard
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🖼️ Screenshots
+
+### Employee Dashboard
+![Dashboard](docs/images/dashboard_employee.png)
+*Dashboard dengan statistik lengkap dan grafik*
+
+### Book Management
+![Book Management](docs/images/books_employee.png)
+*Manage data buku*
+
+### Book Form
+![Book Form](docs/images/book_form.png)
+*Form penambahan buku*
+
+### Categories Management
+![Categories Management](docs/images/categories_employee.png)
+*Manage data kategori*
+
+
+### Employee Management
+![Patient Detail](docs/images/employee_list.png)
+*Manage data pegawai/staff*
+
+
+### Student Dashboard
+![Patient Detail](docs/images/stuent_dashboard.png)
+*Dashboard siswa*
+
+### Student Catalog
+![Patient Detail](docs/images/catalog.png)
+*List buku yang dapat dipinjam siswa*
+
+### History Peminjaman
+![Patient Detail](docs/images/history_borrowings.png)
+*Peminjaman yang pernah dilakukan siswa*
+
+
+### History Borrowings
+![Patient Detail](docs/images/catalog.png)
+*Peminjaman yang pernah dilakukan siswa*
+
+### Profile
+![Patient Detail](docs/images/profile_student.png)
+*Profile*
+
+---
+
+##  Tech Stack
+
+- **Backend**: Laravel 11.x
+- **Frontend**: Blade Templates + TailwindCSS
+- **Database**: MySQL/MariaDB
+- **Authentication**: Laravel Breeze
+- **Charts**: Chart.js
+- **PHP**: 8.2+
+- **Package Manager**: Composer, NPM
+
+### Langkah Instalasi
+
+#### 1. Clone Repository
+```bash
+git clone https://github.com/AnggitSeptiansyah/library-management.git
+cd library-management
+```
+
+#### 2. Install Dependencies
+```bash
+# Install PHP dependencies
+composer install
+
+# Install JavaScript dependencies
+npm install
+```
+
+#### 3. Environment Setup
+```bash
+# Copy file .env
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+#### 4. Konfigurasi Database
+
+Edit file `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=library_management
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_password
+```
+
+Buat database:
+```bash
+mysql -u root -p
+```
+```sql
+CREATE DATABASE library_management;
+EXIT;
+```
+
+## Run Migration and DB Seed
+```bash
+php artisan migrate
+
+php artisan db:seed
+```
+
+
+## Default Login Credentials
+- **Super Admin**
+  - Email: superadmin@library.com
+  - Password: password
+
+- **Admin**
+  - Email: admin@library.com
+  - Password: password

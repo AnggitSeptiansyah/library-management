@@ -63,7 +63,7 @@ class User extends Authenticatable
         return $this->role === 'admin';
     }
 
-    public function processBorrowings()
+    public function processedBorrowings()
     {
         return $this->hasMany(Borrowing::class, 'processed_by');
     }

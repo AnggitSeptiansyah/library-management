@@ -35,7 +35,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employee.employees.index', compact('employees'));
+        return view('employee.employees.index');
     }
 
     /**

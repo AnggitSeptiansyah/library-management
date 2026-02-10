@@ -54,7 +54,7 @@
                     @endif
                     <div>
                         <p class="text-sm text-gray-600">Processed By</p>
-                        <p class="font-semibold text-gray-800">{{ $borrowing->processedBy->fullname }}</p>
+                        <p class="font-semibold text-gray-800">{{ $borrowing->processedBy->name }}</p>
                     </div>
                     @if($borrowing->total_fine > 0)
                     <div class="p-4 bg-red-50 rounded-lg">
