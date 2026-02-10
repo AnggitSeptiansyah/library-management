@@ -34,9 +34,9 @@ class DashboardController extends Controller
             ->where('available_copies', '>', 0)
             ->when(request('search'), function($query) {
                 $search = request('search');
-                $query->where('title', 'like', "%{search}%")
-                    ->orWhere('author', 'like', "%{search}%")
-                    ->orWhere('isbn', 'like', "%{search}%");
+                $query->where('title', 'like', "%{$search}%")
+                    ->orWhere('author', 'like', "%{$search}%")
+                    ->orWhere('isbn', 'like', "%{$search}%");
             })
             ->when(request('category'), function($query){
                 $query->where('category_id', request('category'));
