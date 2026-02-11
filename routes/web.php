@@ -53,6 +53,7 @@ Route::prefix('employee')->name('employee.')->group(function () {
         // Profile
         Route::get('profile', [EmployeeController::class, 'profile'])->name('profile');
         Route::patch('profile', [EmployeeController::class, 'updateProfile'])->name('profile.update');
+        Route::patch('profile/password', [EmployeeController::class, 'updatePassword'])->name('profile.password');
     });
 });
 

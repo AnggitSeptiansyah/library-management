@@ -114,7 +114,7 @@
             <div class="bg-white rounded-lg shadow p-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-4">Change Password</h2>
                 
-                <form action="{{ route('employee.profile.update') }}" method="POST">
+                <form action="{{ route('employee.profile.password') }}" method="POST">
                     @csrf
                     @method('PATCH')
                     

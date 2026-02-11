@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\Employee\StoreEmployeeRequest;
 use App\Http\Requests\Employee\UpdateEmployeeRequest;
+use App\Http\Requests\Employee\UpdatePasswordRequest;
 use App\Http\Requests\Employee\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
 
@@ -85,5 +86,16 @@ class EmployeeController extends Controller
         $employee->update($validated);
 
         return back()->with('success', 'Profile updated successfully.');
+    }
+
+    public function updatePassword(UpdatePasswordRequest $request)
+    {
+        $employee = auth()->user();
+        
+        $employee->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        return back()->with('success', 'Password updated successfully.');
     }
 }

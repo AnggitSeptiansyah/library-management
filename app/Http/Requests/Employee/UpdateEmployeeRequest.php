@@ -26,7 +26,6 @@ class UpdateEmployeeRequest extends FormRequest
         
         return [
             'name' => ['required', 'max:255'],
-            'fullname' => ['required', 'max:255'],
             'email' => ['required', 'email', Rule::unique('users')->ignore($employee->id)],
             'password' => ['nullable', 'min:8', 'confirmed'],
             'role' => ['required', 'in:admin,superadmin'],
@@ -41,7 +40,6 @@ class UpdateEmployeeRequest extends FormRequest
     {
         return [
             'name.required' => 'Name is required.',
-            'fullname.required' => 'Full name is required.',
             'email.required' => 'Email is required.',
             'email.email' => 'Please enter a valid email address.',
             'email.unique' => 'This email already exists.',
