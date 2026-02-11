@@ -57,15 +57,18 @@ class Borrowing extends Model
         return Carbon::now()->startOfDay()->greaterThan($this->due_date);
     }
 
-    public function calculateFine()
+        public function calculateFine(): float
     {
-        if(!$this->isOverdue()){
+        if (!$this->isOverdue()) {
             return 0;
         }
 
         $today = Carbon::now()->startOfDay();
-        $dueDate = Carbon::parse($this->due_date);
-        $overdueDays = $today->diffInDays($dueDate);
+        $dueDate = Carbon::parse($this->due_date)->startOfDay();
+        
+        // Calculate overdue days using Carbon's method
+        // This gives us the number of days from due_date to today
+        $overdueDays = $dueDate->diffInDays($today);
 
         $dailyFine = 500;
         $maxFine = 50000;
@@ -91,9 +94,10 @@ class Borrowing extends Model
         parent::boot();
 
         static::creating(function ($borrowing) {
-            if(empty($borrowing->borrowing_code)) {
+            if (empty($borrowing->borrowing_code)) {
                 $borrowing->borrowing_code = 'BRW-' . date('Ymd') . '-' . str_pad(static::whereDate('created_at', date('Y-m-d'))->count() + 1, 4, '0', STR_PAD_LEFT);
             }
         });
     }
+
 }

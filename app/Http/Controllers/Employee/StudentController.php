@@ -87,6 +87,7 @@ class StudentController extends Controller
     public function updateStatus(UpdateStudentStatusRequest $request, Student $student)
     {
         $student->update($request->validated());
+
         return back()->with('success', 'Student status updated successfully.');
     }
 

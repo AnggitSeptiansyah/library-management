@@ -76,18 +76,25 @@
                         <td class="px-6 py-4">
                             <div class="text-sm text-gray-900">{{ $student->phone ?? '-' }}</div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <form action="{{ route('employee.students.update-status', $student) }}" method="POST" class="inline">
+                        <td x-data="{ 
+                            status: '{{ $student->status }}',
+                            getClass() {
+                                if (this.status === 'active') return 'bg-green-100 text-green-800';
+                                if (this.status === 'graduated') return 'bg-blue-100 text-blue-800';
+                                return 'bg-red-100 text-red-800';
+                            }
+                        }">
+                            <form action="{{ route('employee.students.update-status', $student) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <select name="status" onchange="if(confirm('Change status?')) this.form.submit()" 
-                                        class="text-xs rounded-full px-3 py-1 font-semibold {{ 
-                                            $student->status === 'active' ? 'bg-green-100 text-green-800' : 
-                                            ($student->status === 'graduated' ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800')
-                                        }}">
-                                    <option value="active" {{ $student->status === 'active' ? 'selected' : '' }}>Active</option>
-                                    <option value="graduated" {{ $student->status === 'graduated' ? 'selected' : '' }}>Graduated</option>
-                                    <option value="drop out" {{ $student->status === 'drop out' ? 'selected' : '' }}>Drop Out</option>
+                                <select name="status" 
+                                        x-model="status"
+                                        :class="getClass()"
+                                        @change="if(confirm('Change status?')) $el.form.submit()"
+                                        class="text-xs rounded-full px-3 py-1 font-semibold border-0 cursor-pointer">
+                                    <option value="active">Active</option>
+                                    <option value="graduated">Graduated</option>
+                                    <option value="drop out">Drop Out</option>
                                 </select>
                             </form>
                         </td>

@@ -23,7 +23,6 @@ class StoreEmployeeRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255'],
-            'fullname' => ['required', 'max:255'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'min:8', 'confirmed'],
             'role' => ['required', 'in:admin,superadmin'],
