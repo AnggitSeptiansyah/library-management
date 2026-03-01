@@ -85,7 +85,7 @@
 *Manage data buku*
 
 ### Book Form
-![Book Form](docs/images/book_form.png)
+![Book Form](docs/images/add_books.png)
 *Form penambahan buku*
 
 ### Categories Management
@@ -99,24 +99,19 @@
 
 
 ### Student Dashboard
-![Patient Detail](docs/images/stuent_dashboard.png)
+![Patient Detail](docs/images/dashboard_student.png)
 *Dashboard siswa*
 
 ### Student Catalog
-![Patient Detail](docs/images/catalog.png)
+![Student Catalog](docs/images/catalog_student.png)
 *List buku yang dapat dipinjam siswa*
 
 ### History Peminjaman
-![Patient Detail](docs/images/history_borrowings.png)
-*Peminjaman yang pernah dilakukan siswa*
-
-
-### History Borrowings
-![Patient Detail](docs/images/catalog.png)
+![Histroy Peminjaman](docs/images/history_borrowings.png)
 *Peminjaman yang pernah dilakukan siswa*
 
 ### Profile
-![Patient Detail](docs/images/profile_student.png)
+![Profile](docs/images/profile_student.png)
 *Profile*
 
 ---
