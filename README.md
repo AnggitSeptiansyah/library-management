@@ -179,6 +179,14 @@ php artisan migrate
 php artisan db:seed
 ```
 
+## Run Crontab untuk Scheduler Otomatis
+```bash
+crontab -e
+
+# Tambahkan
+* * * * * cd /path/to/project && php artisan schedule:run >> /dev/null 2>&1
+```
+
 
 ## Default Login Credentials
 - **Super Admin**
