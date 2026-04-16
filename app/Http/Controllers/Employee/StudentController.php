@@ -17,9 +17,9 @@ class StudentController extends Controller
     {
         $students = Student::when(request('search'), function($query) {
             $search = request('search');
-            $query->where('name', 'like', "%{search}%")
-                ->orWhere('nis', 'like', "%{search}%")
-                ->orWhere('nisn', 'like', "%{search}%");
+            $query->where('fullname', 'like', "%{$search}%")
+                ->orWhere('nis', 'like', "%{$search}%")
+                ->orWhere('nisn', 'like', "%{$search}%");
         })
         ->when(request('status'), function($query) {
             $query->where('status', request('status'));

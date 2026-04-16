@@ -7,7 +7,7 @@
 
 ## 📋 Deskripsi
 
-**Medical Record Information System (MRIS)** adalah Sistem manajemen perpustakaan sekolah dengan Laravel, TailwindCSS, dan AlpineJS.
+**Library Management** adalah Sistem manajemen perpustakaan sekolah dengan Laravel, TailwindCSS, dan AlpineJS.
 
 
 ### ✨ Fitur Utama
